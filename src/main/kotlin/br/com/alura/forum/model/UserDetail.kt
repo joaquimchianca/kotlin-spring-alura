@@ -1,4 +1,4 @@
-package br.com.alura.forum.service
+package br.com.alura.forum.model
 
 import br.com.alura.forum.model.Usuario
 import org.springframework.security.core.GrantedAuthority
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails
 class UserDetail(
     private val usuario: Usuario
 ) : UserDetails {
-    override fun getAuthorities() = null
+    override fun getAuthorities() = usuario.role
 
     override fun getPassword() = usuario.password
 
