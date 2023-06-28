@@ -17,7 +17,8 @@ class JWTAuthenticationFilter(
     ) {
         //pegar o token da requisicao do usuario, para checar se ele tem
         //autorizacao para acessar o endpoint
-        val token = request.getHeader("Authorization")
+        val token = request.
+        getHeader("Authorization")
         val tokenDetail = getTokenDetail(token)
 
         if(jwtUtil.isValid(tokenDetail)) {

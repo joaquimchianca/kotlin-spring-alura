@@ -21,7 +21,6 @@ class JWTUtil(
     private val secret: Key = Keys.secretKeyFor(SignatureAlgorithm.HS512)
 
     fun generateToken(username: String, authorities: MutableList<Role>) : String? {
-        println(secret.encoded.toString())
         return Jwts.builder()
             .setSubject(username)
             .claim("role", authorities)
